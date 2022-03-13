@@ -1,0 +1,20 @@
+---
+framework: jest
+preRun:
+     command:
+        - yarn install
+        - script/docker-build
+        - export LATEXML_DOCKER=true
+
+preMerge:
+  pattern:
+    - "**/*.test.js"
+
+postMerge:
+  pattern: 
+    - "**/*.test.js"
+
+configFile: "jest.config.js"
+
+
+version: 1.0
